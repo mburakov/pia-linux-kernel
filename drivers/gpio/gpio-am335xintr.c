@@ -250,9 +250,9 @@ static int __init gpio_interrupt_init(void)
 	iowrite32(reg, gpio_reg_mem + GPIO_IRQSTATUS_SET_1);
 
 	// Set hw debouncimg time to maximum (255 * 31 mcs)
-        iowrite32(0xFF, gpio_reg_mem + GPIO_DEBOUNCINGTIME);
+	iowrite32(0xFF, gpio_reg_mem + GPIO_DEBOUNCINGTIME);
 
-        reg = ioread32(gpio_reg_mem + GPIO_DEBOUNCENABLE);
+	reg = ioread32(gpio_reg_mem + GPIO_DEBOUNCENABLE);
 	reg |=  1 << GPIO_BIT_POSITION;
 	iowrite32(reg, gpio_reg_mem + GPIO_DEBOUNCENABLE);
 
